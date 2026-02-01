@@ -123,7 +123,7 @@ void prim_readAgeFile(EvalState &state, const PosIdx pos, Value **args,
   if (!content) {
     throw Error("decrypt error while evaluation");
   };
-  v.mkString(content);
+  v.mkString(content, state.mem);
 }
 
 static std::vector<RegisterPrimOp> primops = std::vector{
